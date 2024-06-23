@@ -31,18 +31,18 @@ static void get_rfid(uint64_t rfid){
 
 static void get_data( char* data,  char* topic){
     
-    printf("\n[%s] %s\n",topic,data);
-    //Primer verifico que la respuesta sea para mi con el código PRODUCT_ID
-    // Si no se cumple la igualad retorno, el mensaje no es para mi lector RFID
-    if( strcmp(data,PRODUCT_ID) != 0) {
-    printf("%s != %s\n",data,PRODUCT_ID);
-    return;}
-    //SI no coincide el  PRODUCT_ID, ignoro el mensaje
-    if(! EQUAL(data,PRODUCT_ID))return; 
-   // Proceso el mensaje.
-    CHECK(topic,RES_NODE,action_ok);
- 
+  void get_data(char* data, char* topic) {
+    for (int i = 0; data[i] != '\0'; i++) {
+        if (data[i] == '1') {
+            CHECK(topic, RES_NODE, action_ok);
+        } else if (data[i] == '0') {
+            CHECK(topic, RES_NODE, action_fail);
+        } else {
+            CHECK(topic, RES_NODE, action_unknown);
+        }
+    }
 }
+
 
 
 
