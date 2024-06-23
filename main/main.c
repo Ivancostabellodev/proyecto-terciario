@@ -40,7 +40,7 @@ static void get_data( char* data,  char* topic){
     //SI no coincide el  PRODUCT_ID, ignoro el mensaje
     if(! EQUAL(data,PRODUCT_ID))return; 
    // Proceso el mensaje.
-    CHECK(topic,RES_NODE);
+    CHECK(topic,RES_NODE,action_ok);
  
 }
 
@@ -92,9 +92,8 @@ int app_main()
 static void mqtt_connected(){
     printf("init mqtt\n");
     // Me conector a todos los tópicos necesarios.
-    mqtt_subcribe(RES_OK,2);
-    mqtt_subcribe(RES_FAIL,2);
-    mqtt_subcribe(RES_UNKNOWN,2);
+    mqtt_subcribe(RES_NODE,2);
+
     
     // Lector de tarjetas
     rc522_init(&config,get_rfid);
