@@ -1,6 +1,6 @@
 #include "main.h"
 #include "keypad.h"
-
+#include <driver/gpio.h>
 
 // Buffer para formatear las peticiones al servidor
 char buffer[LEN_BUFFER]= {0};
@@ -68,9 +68,10 @@ static void keypad_send(char*b){
 
 
 
-
 int app_main()
 {
+    gpio_set_direction(GPIO_LED,GPIO_MODE_OUTPUT);
+    gpio_set_level(GPIO_LED,0);
     wifi_connect(WIFI_CREDENTIALS_ID,WIFI_CREDENTIALS_PASS,callback_wifi_connected,NULL);
 
     while(1){
@@ -78,10 +79,6 @@ int app_main()
     }   
     return 0;
 }
-
-
-
-
 
 
 
@@ -113,12 +110,12 @@ static void callback_wifi_connected(){
 
 static void action_ok(){
     printf("\n Usuario autorizado\n");
- 
+   gpio_set_level(GPIO_LED,1);
 }
 
 static void action_fail(){
     printf("\n Usuario  NO autorizado\n");
-   
+   gpio_set_level(GPIO_LED,0);
 }
 
 static void action_unknown(){
