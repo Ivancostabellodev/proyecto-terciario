@@ -23,13 +23,6 @@ static void get_rfid(uint64_t rfid){
  }
 
 
-
-
-
-
-
-
-static void get_data( char* data,  char* topic){
     
   void get_data(char* data, char* topic) {
     for (int i = 0; data[i] != '\0'; i++) {
@@ -42,7 +35,7 @@ static void get_data( char* data,  char* topic){
         }
     }
 }
-}
+
 
 
 

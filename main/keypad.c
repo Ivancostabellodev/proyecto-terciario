@@ -18,17 +18,17 @@
 
 // columns are inputs
 
-#define COL_1   GPIO_NUM_4 	// GPIO_NUM_25
-#define COL_2   GPIO_NUM_0 	// GPIO_NUM_26
-#define COL_3   GPIO_NUM_2 	// GPIO_NUM_27
-#define COL_4   GPIO_NUM_15 // GPIO_NUM_14
+#define COL_1   GPIO_NUM_32 	// GPIO_NUM_25
+#define COL_2   GPIO_NUM_33 	// GPIO_NUM_26
+#define COL_3   GPIO_NUM_25 	// GPIO_NUM_27
+#define COL_4   GPIO_NUM_26     // GPIO_NUM_14
 
 //rows are output
 
-#define ROW_1    GPIO_NUM_18
-#define ROW_2    GPIO_NUM_5
-#define ROW_3    GPIO_NUM_17
-#define ROW_4    GPIO_NUM_16
+#define ROW_1    GPIO_NUM_27
+#define ROW_2    GPIO_NUM_14
+#define ROW_3    GPIO_NUM_12
+#define ROW_4    GPIO_NUM_13
 
 
  gpio_num_t rows[NUM_ROW] = { ROW_1, ROW_2, ROW_3, ROW_4 };
