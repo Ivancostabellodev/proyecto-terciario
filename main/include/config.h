@@ -11,12 +11,10 @@
 #define TOPIC_PUB_TEC              "/Teclado_de_esp"            // Tópico para enviar solicitudes del teclado
 
 
-// El formato de las respuestas es {PRODUCT_ID}/RES/OK
+
 #define RES_NODE              "RES/NODE"
 
 
-
-#define PRODUCT_ID          "12345678"                  // Numero de 8 cifras que describe el lector RFID
 #define LEN_BUFFER          100
 #define GPIO_LED            2
 
@@ -35,7 +33,7 @@
 
 
 
-#define REQUEST_FORMAT           "%s,%" PRIu64 ""
-#define REQUEST_FORMAT_KEYPAD    "%s,%s"
+#define REQUEST_FORMAT           "%" PRIu64 
+#define REQUEST_FORMAT_KEYPAD    "%s"
 
 #endif
