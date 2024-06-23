@@ -6,14 +6,14 @@
  * @brief Parámetros para configuración la conexión con servidor MQTT
  * 
  */
-#define MQTT_URL            "mqtt://broker.hivemq.com"
-#define TOPIC_PUB           "/REQ"                      // Tópico para enviar solicitudes
+#define MQTT_URL            "mqtt://broker.hivemq.com:1883"
+#define TOPIC_PUB_TAR           "/Tarjeta_de_esp"               // Tópico para enviar solicitudes del lector
+#define TOPIC_PUB_TEC              "/Teclado_de_esp"            // Tópico para enviar solicitudes del teclado
 
 
 // El formato de las respuestas es {PRODUCT_ID}/RES/OK
-#define RES_OK              "12345678/RES/OK"
-#define RES_FAIL            "12345678/RES/FAIL"
-#define RES_UNKNOWN         "12345678/RES/UNKNOWN"
+#define RES_NODE              "RES/NODE"
+
 
 
 #define PRODUCT_ID          "12345678"                  // Numero de 8 cifras que describe el lector RFID

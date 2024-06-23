@@ -19,7 +19,7 @@ static void get_rfid(uint64_t rfid){
     sprintf(buffer,REQUEST_FORMAT,PRODUCT_ID, rfid);
     //printf("Envió petición al servidor:\n");
     printf("\n%s\n",buffer);
-    mqtt_publish(buffer,TOPIC_PUB,2,0);
+    mqtt_publish(buffer,TOPIC_PUB_TAR,2,0);
  }
 
 
@@ -40,9 +40,8 @@ static void get_data( char* data,  char* topic){
     //SI no coincide el  PRODUCT_ID, ignoro el mensaje
     if(! EQUAL(data,PRODUCT_ID))return; 
    // Proceso el mensaje.
-    CHECK(topic,RES_OK,action_ok);
-    CHECK(topic,RES_FAIL,action_fail);
-    CHECK(topic,RES_UNKNOWN,action_unknown);
+    CHECK(topic,RES_NODE);
+ 
 }
 
 
@@ -63,7 +62,7 @@ static void keypad_send(char*b){
     sprintf(buffer,REQUEST_FORMAT_KEYPAD,PRODUCT_ID, b);
     //printf("Envió petición al servidor:\n");
     printf("\n%s\n",buffer);
-    mqtt_publish(buffer,TOPIC_PUB,2,0);
+    mqtt_publish(buffer,TOPIC_PUB_TEC,2,0);
     
 }
 
