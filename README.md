@@ -10,6 +10,6 @@ Este proyecto se divide en 3 partes:
 
 Image:
 
-![diagramawokwi](./imgs/asdasdsad.png)
+![diagramawokwi](./imgs/asdasdsad.jpg)
 
 ###End
