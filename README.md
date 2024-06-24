@@ -6,45 +6,45 @@ Este proyecto se divide en 3 partes:
 - La API para conectar la BD con el ESP32 a traves de un servidor MQTT
 - Una carpeta main en la que se encuentra el codeo en lenguaje C que utiliza el ESP32
 
-## Documentacion [Linkdelcoso](./documentacion/html/index.html)
+### Documentacion [index]()
 
-### Imagenes
+## Imagenes
 
-## Diagrama del circuito hecho en wokwi:
+### Diagrama del circuito hecho en wokwi:
 
 ![diagramawokwi](./imgs/wokwi.jpg)
 
-## Diagrama del funcionamiento del dispositivo:
+### Diagrama del funcionamiento del dispositivo:
 
 ![diagramafuncionamiento](./imgs/funcionamiento.jpg)
 
-## Diagrama del pinout que tiene el esp utilizado el cual fue sacado de stareware
+### Diagrama del pinout que tiene el esp utilizado el cual fue sacado de stareware
 
 ![gpios](./imgs/pinoutesp32.jpg)
 
 Revisar que su placa de desarrollo coincida con el siguiene pinout
 
-#### Link para comprar el ESP32 [Linkdelcoso](https://tienda.starware.com.ar/producto/placa-desarrollo-espressif-esp32-ch9102x-dual-core-wifi-bluetooth/ "Link") 
+#### Link para comprar el ESP32 [Link](https://tienda.starware.com.ar/producto/placa-desarrollo-espressif-esp32-ch9102x-dual-core-wifi-bluetooth/ "Link") 
 
 
-## Funcionamiento de los pines del teclado
+### Funcionamiento de los pines del teclado
 ![pinesteclado](./imgs/Sintítulo.jpg)
 
-### Videos
+## Videos
 
-## Funcionamiento del producto cuando se lee una tarjeta aceptada
+### Funcionamiento del producto cuando se lee una tarjeta aceptada
 
 https://github.com/Valen989/Proyecto-terciario/assets/168491945/be562d63-bfd8-4a42-9cbe-761d0a99b043
 
-## Funcionamiento del producto cuando se lee una tarjeta rechazada
+### Funcionamiento del producto cuando se lee una tarjeta rechazada
 
 https://github.com/Valen989/Proyecto-terciario/assets/168491945/24c13f65-53d7-45f8-bf5b-b040626c9e7b
 
-## Funcionamiento del producto cuando se lee una password aceptada
+### Funcionamiento del producto cuando se lee una password aceptada
 
 https://github.com/Valen989/Proyecto-terciario/assets/168491945/0f934803-fe3b-4010-b8cb-a2c4d3ee81db
 
-## Funcionamiento del producto cuando se lee una password rechazada
+### Funcionamiento del producto cuando se lee una password rechazada
 
 https://github.com/Valen989/Proyecto-terciario/assets/168491945/0d3bb047-016f-45b9-a058-f216081749bd
 
@@ -73,7 +73,7 @@ Fila_3     |  12
 Fila_4     |  13
 
 
-## MQTT
+### MQTT
 
 URL del broker MQTT: `mqtt://test.mosquitto.org`
 
@@ -119,4 +119,4 @@ void get_data(char* data, char* topic) {
 }
 ```
 
-Para ver mas en detalle la API o la base de datos entrar en el directorio `NODE-RED` para el primero o `BDSQL` para la segunda
+Para ver mas en detalle la API o la base de datos entrar en el directorio `Back-END` para el primero o `BDSQL` para la segunda
