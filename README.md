@@ -20,8 +20,10 @@ Este proyecto se divide en 3 partes:
 
 ![gpios](./imgs/pinoutesp32.jpg)
 
-#### Link para comprar el ESP32 [Heading link](https://tienda.starware.com.ar/producto/placa-desarrollo-espressif-esp32-ch9102x-dual-core-wifi-bluetooth/ "Heading link") Heading link [Heading link]
+#### Link para comprar el ESP32 [Linkdelcoso](https://tienda.starware.com.ar/producto/placa-desarrollo-espressif-esp32-ch9102x-dual-core-wifi-bluetooth/ "Link") 
 
+## Funcionamiento de los pines del teclado
+![pinesteclado](./imgs/sintitulo.jpg)
 
 ### Videos
 
@@ -41,4 +43,49 @@ https://github.com/Valen989/Proyecto-terciario/assets/168491945/0f934803-fe3b-40
 
 https://github.com/Valen989/Proyecto-terciario/assets/168491945/0d3bb047-016f-45b9-a058-f216081749bd
 
+#### Configuracion
 
+### Pines GPIO para la conexion entre el ESP y el lector RFID
+
+GPIO(ESP32)  | Pines Lector RFID
+------------- | -------------
+SDA_GPIO   |  22
+SCK_GPIO   |  19
+MOSI_GPIO  |  23
+MISO_GPIO  |  21
+
+### Pines GPIO para la conexion entre el ESP y el teclado matricial
+
+GPIO(ESP32)  | Pines Lector RFID
+------------- | -------------
+SDA_GPIO   |  22
+SCK_GPIO   |  19
+MOSI_GPIO  |  23
+MISO_GPIO  |  21
+
+### MQTT
+
+URL del broker MQTT: `mqtt://test.mosquitto.org`
+
+## Topicos en los que se envia informacion:
+
+`/Tarjeta_de_esp`    Por este topico se envian los ID de las tarjetas
+`/Teclado_de_esp`    Por este topico se envian las passwords escritas en el teclado
+
+## Topico al que el ESP esta suscripto
+
+`RES/NODE`        Por este topico se recibe el 1 o 0 que va a procesar el ESP
+
+### Configuracion WIFI
+
+Para iniciar la conexion WIFI debera crearse un archivo.h llamado "wifi_credentials.h" en el que se ingresara la red y contraseña wifi a la que se busca conectar el ESP
+
+```c
+#ifndef _WIFI_CREDENTIALS_H
+#define _WIFI_CREDENTIALS_H
+
+#define WIFI_CREDENTIALS_ID       ("Tu red")
+#define WIFI_CREDENTIALS_PASS     ("Tu contraseña")
+
+#endif
+```
