@@ -1,0 +1,338 @@
+[
+    {
+        "id": "7086eb3ad3fe87cb",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "515c0253abf6b4dc",
+        "type": "mqtt in",
+        "z": "7086eb3ad3fe87cb",
+        "name": "",
+        "topic": "/Tarjeta_de_esp",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "04f5480bf16b94a7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 240,
+        "wires": [
+            [
+                "07b45a38a89eafdb",
+                "1e6772124602603f"
+            ]
+        ]
+    },
+    {
+        "id": "07b45a38a89eafdb",
+        "type": "function",
+        "z": "7086eb3ad3fe87cb",
+        "name": "function 2",
+        "func": "var dato_tarjeta = msg.payload\nmsg.topic = \"SELECT count(*) as acceso from usuarios where Id_tarjeta =\" + dato_tarjeta\nreturn msg;  ",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 160,
+        "wires": [
+            [
+                "b44735f326fe31e5"
+            ]
+        ]
+    },
+    {
+        "id": "f6b34360e41d4d4a",
+        "type": "function",
+        "z": "7086eb3ad3fe87cb",
+        "name": "function 3",
+        "func": "var dato_ = msg.payload[0].acceso\nmsg.payload = dato_\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 160,
+        "wires": [
+            [
+                "8a9eae3336745012",
+                "4326985cd0515087"
+            ]
+        ]
+    },
+    {
+        "id": "8a9eae3336745012",
+        "type": "mqtt out",
+        "z": "7086eb3ad3fe87cb",
+        "name": "",
+        "topic": "RES/NODE",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "04f5480bf16b94a7",
+        "x": 870,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "b44735f326fe31e5",
+        "type": "mysql",
+        "z": "7086eb3ad3fe87cb",
+        "mydb": "faf3f2c04728b225",
+        "name": "ejemplo_trabajo",
+        "x": 480,
+        "y": 160,
+        "wires": [
+            [
+                "f6b34360e41d4d4a"
+            ]
+        ]
+    },
+    {
+        "id": "1e6772124602603f",
+        "type": "function",
+        "z": "7086eb3ad3fe87cb",
+        "name": "function 6",
+        "func": "var dato_tarjeta2 =msg.payload\nmsg.topic =\"INSERT INTO log (Sector, Id_tarjeta, Password_keyb, Hora, Fecha) VALUES ('Sector A',\" +dato_tarjeta2+\",Null, NOW(), CURDATE());\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 300,
+        "wires": [
+            [
+                "2015a6143d5748f5"
+            ]
+        ]
+    },
+    {
+        "id": "2015a6143d5748f5",
+        "type": "mysql",
+        "z": "7086eb3ad3fe87cb",
+        "mydb": "faf3f2c04728b225",
+        "name": "ejemplo_trabajo",
+        "x": 620,
+        "y": 300,
+        "wires": [
+            [
+                "4326985cd0515087"
+            ]
+        ]
+    },
+    {
+        "id": "95709ebad58ba403",
+        "type": "mqtt in",
+        "z": "7086eb3ad3fe87cb",
+        "name": "",
+        "topic": "/Teclado_de_esp",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "b9c02a65ddddd836",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 380,
+        "wires": [
+            [
+                "c4b2aebe35724ed6",
+                "ac277fef5510ff73"
+            ]
+        ]
+    },
+    {
+        "id": "c4b2aebe35724ed6",
+        "type": "function",
+        "z": "7086eb3ad3fe87cb",
+        "name": "function 7",
+        "func": "var dato_teclado = msg.payload\nmsg.topic = \"SELECT count(*) as acceso from usuarios where Password_keyb =\" + dato_teclado\nreturn msg;  ",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 380,
+        "wires": [
+            [
+                "85a5ac20c86885b6"
+            ]
+        ]
+    },
+    {
+        "id": "85a5ac20c86885b6",
+        "type": "mysql",
+        "z": "7086eb3ad3fe87cb",
+        "mydb": "faf3f2c04728b225",
+        "name": "ejemplo_trabajo",
+        "x": 500,
+        "y": 380,
+        "wires": [
+            [
+                "a2d9536c0c8ec53b"
+            ]
+        ]
+    },
+    {
+        "id": "a2d9536c0c8ec53b",
+        "type": "function",
+        "z": "7086eb3ad3fe87cb",
+        "name": "function 8",
+        "func": "var dato_ = msg.payload[0].acceso\nmsg.payload = dato_\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680.8958129882812,
+        "y": 378.8888854980469,
+        "wires": [
+            [
+                "8a9eae3336745012",
+                "4326985cd0515087"
+            ]
+        ]
+    },
+    {
+        "id": "ac277fef5510ff73",
+        "type": "function",
+        "z": "7086eb3ad3fe87cb",
+        "name": "function 9",
+        "func": "var dato_teclado2 =msg.payload\nmsg.topic =\"INSERT INTO log (Sector, Id_tarjeta, Password_keyb, Hora, Fecha) VALUES ('Sector A',Null,\" +dato_teclado2+ \", NOW(), CURDATE());\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 460,
+        "wires": [
+            [
+                "8be7ee5d76d07ebd"
+            ]
+        ]
+    },
+    {
+        "id": "8be7ee5d76d07ebd",
+        "type": "mysql",
+        "z": "7086eb3ad3fe87cb",
+        "mydb": "faf3f2c04728b225",
+        "name": "ejemplo_trabajo",
+        "x": 520,
+        "y": 460,
+        "wires": [
+            [
+                "4326985cd0515087"
+            ]
+        ]
+    },
+    {
+        "id": "4326985cd0515087",
+        "type": "debug",
+        "z": "7086eb3ad3fe87cb",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "04f5480bf16b94a7",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "faf3f2c04728b225",
+        "type": "MySQLdatabase",
+        "name": "ejemplo_trabajo",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "ejemplo_trabajo",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "b9c02a65ddddd836",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
