@@ -1,2 +1,0 @@
-INSERT INTO usuarios (Dni, Departamento, Apellido, Segundo_apellido, Nombre, Segundo_nombre, Id_tarjeta, Password_keyb)
-VALUES (258648121, 'A', 'Gutierrez',Null, 'Albreto', 'Maria', 897312548387, 444);

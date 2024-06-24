@@ -52,7 +52,7 @@ https://github.com/Valen989/Proyecto-terciario/assets/168491945/0d3bb047-016f-45
 
 ### Pines GPIO para la conexion entre el ESP y el lector RFID
 
-GPIO(ESP32)  | Pines Lector RFID
+ Pines Lector RFID | GPIO(ESP32)
 ------------- | -------------
 SDA_GPIO   |  22
 SCK_GPIO   |  19
@@ -61,7 +61,7 @@ MISO_GPIO  |  21
 
 ### Pines GPIO para la conexion entre el ESP y el teclado matricial
 
-GPIO(ESP32)  | Pines Teclado Matricial
+Pines Teclado Matricial  | GPIO(ESP32)
 -------------| -------------
 Columna_1  |  32
 Columna_2  |  33 
@@ -119,4 +119,5 @@ void get_data(char* data, char* topic) {
 }
 ```
 
-Para ver mas en detalle la API o la base de datos entrar en el directorio `Back-END` para el primero o `BDSQL` para la segunda
+
+Para ver la API y la Base de datos ir a [Link](https://github.com/Valen989/Back-y-BD "Link") 
