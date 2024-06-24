@@ -4,56 +4,39 @@
 
 
 
+
+
 /**
- * @brief Configuración y conexión a servidor MQTT.
+ * @brief                  Inicia el cliente MQTT con el URL especificado
  * 
- * @param uri   Dirección del servidor
- * @param conn  Callback de conexión. Se llama cuando el sistema se conecta al servidor.
- * @param disconn  Callback de recepción. Se llama cuando el sistema se desconecta del servidor.
- * @param data_received     Callback de recepción de datos. Se llama cuando se reciben datos desde tópicos suscritos.
- * @return esp_err_t  Retorna ESP_OK si todo sale bien.
+ * @param uri              URL del broker MQTT
+ * @param conn             Callback que se llama cuando se conecta al servidor 
+ * @param disconn          Callback que se llama cuando se desconecta del servidor
+ * @param data_received    Callback que se llama para manejar los datos recibidos
+ * @return esp_err_t       Retorna a ESP_OK
  */
-
-
-
-
 esp_err_t mqtt_init(const char* uri, esp_callback_t conn, esp_callback_t disconn,callback_data_t data_received);
 
-
 /**
- * @brief   Publico un mensaje en un cierto tópico. Antes debe llamarse a mqtt_init() para conectarse a servidor.
+ * @brief              Publica un mensaje en un topico especifico
  * 
- * @param msg   Mensaje a publicar. 
- * @param topic Tópico a donde queremos publicar.
- * @param qos   Calidad del servicio.
- * @param retain Retención de mensaje.
- * @return esp_err_t  Retorna ESP_OK si todo sale bien.
+ * @param msg         Mensaje a publicar
+ * @param topic       Topico en el que se publica el mensaje
+ * @param qos         Nivel de la calidad del servicio (Quality of service) para el mensaje
+ * @param retain      Retencion de mensaje
  */
 esp_err_t mqtt_publish(const char* msg, const char* topic,int qos, int retain);
 
-
 /**
- * @brief Publico un mensaje en un cierto tópico. Retorna inmediatamente la función y 
- * deja el mensaje para ser procesado y enviado desde una cola de datos de salida.
- * 
- * @param msg   Mensaje a publicar. 
- * @param topic Tópico a donde queremos publicar.
- * @param qos   Calidad del servicio.
- * @param retain Retención de mensaje.
- * @return esp_err_t  Retorna ESP_OK si todo sale bien.
+ * @brief      Publica un mensaje en un topico especifico y deja el mensaje en una cola de manejo de mensajes
+ *  
  */
 esp_err_t mqtt_publish_on_queue(const char* msg, const char* topic,int qos, int retain);
 
 
 /**
- * @brief Suscripcion a un determinado topico.
+ * @brief    Se suscribe a un topico especifico para recibir mensajes
  * 
- * @param topic Nombre del topico al cual nos suscribimos.
- * @param qos   Calidad de la suscripcion:
- *          0 - El sistema no verifica que se reciban los mensajes
- *          1 - El sistema verifica que se reciban los mensajes al menos una vez
- *          2 - El sistema verifica que se reciban los mensaje solo una vez y en el orden en el que se enviaron.
- * @return esp_err_t Retorna ESP_OK si todo sale bien.
  */
 esp_err_t mqtt_subcribe( char* topic, int qos);
 

@@ -65,13 +65,13 @@ static void callback_wifi_connected();
 
 
 /**
- * @brief Function que se la tarjeta RFID leída es de un USUARIO AUTORIZADO.
+ * @brief Funcion que dictamina que la tarjeta RFID leída es de un USUARIO AUTORIZADO.
  * 
  */
 static void action_ok();
 
 /**
- * @brief Function que se la tarjeta RFID leída es de un USUARIO NO AUTORIZADO.
+ * @brief Funcion que dictamina que la tarjeta RFID leída es de un USUARIO NO AUTORIZADO.
  * 
  */
 static void action_fail();

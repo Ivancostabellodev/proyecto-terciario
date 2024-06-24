@@ -7,22 +7,12 @@ char buffer[LEN_BUFFER]= {0};
 
 
 
-
-
-
-
-
-
-
-
 static void get_rfid(uint64_t rfid){ 
     sprintf(buffer,REQUEST_FORMAT, rfid);
     //printf("Envió petición al servidor:\n");
     printf("\n%s\n",buffer);
     mqtt_publish(buffer,TOPIC_PUB_TAR,2,0);
  }
-
-
     
   void get_data(char* data, char* topic) {
     for (int i = 0; data[i] != '\0'; i++) {
@@ -38,16 +28,11 @@ static void get_rfid(uint64_t rfid){
 
 
 
-
-
-
 static void keypad_add_key(char key){ 
     //Aquí podría ir un LCD Gráfico.
 	printf("[%c]",key);
     fflush(stdout);
 }
-
-
 
 
 
@@ -58,7 +43,6 @@ static void keypad_send(char*b){
     mqtt_publish(buffer,TOPIC_PUB_TEC,2,0);
     
 }
-
 
 
 int app_main()
@@ -72,9 +56,6 @@ int app_main()
     }   
     return 0;
 }
-
-
-
 
 
 

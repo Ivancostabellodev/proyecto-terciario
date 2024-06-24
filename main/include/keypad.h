@@ -1,15 +1,14 @@
 #include "base.h"
 
-
-
 /**
- * @brief Teclado compatible con callbacks. 
- * Utiliza una tarea en segundo plano para el polling.
+ * @brief Funcion para iniciar el teclado que usa callbacks como parametros y tareas en 
+ * segundo plano para el polling
  * 
- * @param callback_key_pressed Callback cuando se presiona una tecla, recibe un char como parámetro
- * @param callback_get_buffer  Callback cuando se presiona la tecla, recibe el buffer como parámetro
- * @param fclear  Callback que se llama cuando se presiona tecla C, se borra el buffer
+ * @param callback_key_pressed    callback que se llama cuando se presiona una tecla y devuelve esa tecla
+ * @param callback_get_buffer     callback que se llama cuando se obtiene un buffer
+ * @param fclear                 callback para limpiar/resetar el teclado se usa cuando se presiona la tecla C
  */
+
 void keypad_init( callback_get_key callback_key_pressed,
                   callback_get_buffer callback_get_buffer,
                   callback_clear  fclear);
