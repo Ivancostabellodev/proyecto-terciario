@@ -16,7 +16,8 @@ Esta tabla es en la que se registran todos los movimentos que ocurren. Ya sea un
 
 ### Usando el ejemplo
 
-|Id_usuario  | Dni | Departamento | Apellido | Segundo_apellido | Nombre | Segundo_nombre   | Id_tarjeta | Password_keyb|
-|------------|-----|--------------|----------|------------------|--------|------------------|------------||258648121    | A   | Gutierrez    | Null     | Albreto          | Maria  | 897312548387     | 444        |
+| Id_usuario  | Dni | Departamento | Apellido | Segundo_apellido | Nombre | Segundo_nombre | Id_tarjeta | Password_keyb
+| :------------ |:---------------:|: -----:|:------------:|:--------:||:--------:||:--------:||:--------:||:--------:||:--------:|
+| 258648121      | A | $1600 | Gutierrez |Null | Albreto | Maria | 897312548387 | 444
 
 Si ejecutamos el archivo `probar_BD.sql` nos deveria quedar la tabla usuarios asi, obviamente que los campos `Dni`, `Departamento`, `Apellido`, `Segundo_apellido`, `Nombre`, `Segundo_nombre` son personalizables a gusto pero los campos `Id_tarjeta` y `Password_keyb` son los que definen quien tiene acceso como no. Por lo que es muy importante recordar el password ingresado, como asi tambien recordar que tarjetas son registradas.
