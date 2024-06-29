@@ -6,7 +6,7 @@ Este proyecto se divide en 3 partes:
 - La API para conectar la BD con el ESP32 a traves de un servidor MQTT
 - Una carpeta main en la que se encuentra el codeo en lenguaje C que utiliza el ESP32
 
-### Documentacion [index]()
+### Documentacion [index](https://archivoindex.netlify.app)
 
 ## Imagenes
 
