@@ -54,23 +54,6 @@ Revisar que su placa de desarrollo coincida con el siguiene pinout
 ### Funcionamiento de los pines del teclado
 ![pinesteclado](./imgs/Sintítulo.jpg)
 
-## Videos
-
-### Funcionamiento del producto cuando se lee una tarjeta aceptada
-
-https://github.com/Valen989/Proyecto-terciario/assets/168491945/be562d63-bfd8-4a42-9cbe-761d0a99b043
-
-### Funcionamiento del producto cuando se lee una tarjeta rechazada
-
-https://github.com/Valen989/Proyecto-terciario/assets/168491945/24c13f65-53d7-45f8-bf5b-b040626c9e7b
-
-### Funcionamiento del producto cuando se lee una password aceptada
-
-https://github.com/Valen989/Proyecto-terciario/assets/168491945/0f934803-fe3b-4010-b8cb-a2c4d3ee81db
-
-### Funcionamiento del producto cuando se lee una password rechazada
-
-https://github.com/Valen989/Proyecto-terciario/assets/168491945/0d3bb047-016f-45b9-a058-f216081749bd
 
 ### MQTT
 
