@@ -1,3 +1,7 @@
+/**
+ * @file keypad.h
+ * @brief libreria para definir callbacks que usa el teclado amtricial
+ */
 #include "base.h"
 
 /**

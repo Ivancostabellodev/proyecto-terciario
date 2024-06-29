@@ -1,3 +1,7 @@
+/**
+ * @file main.h
+ * @brief libreria para configurar los pines del lector rfid y funciones del mqtt y del wifi
+ */
 #ifndef _MAIN_H
 #define _MAIN_H
 
@@ -34,52 +38,42 @@ rc522_config_t config = {
 
 
 
-
-
-
-
-
 /**
- * Función callback. Se llama cuando el dispositivo recibe mensajes desde
- * algún tópico al que este suscrito.
- * @param data String con el mensaje enviado.
- * @param topic Canal al que se envió el mensaje.
+ * @brief Esta función se encarga de obtener los datos desde el lector de tarjetas RFID y publicarlos en un tema específico de MQTT.
+ * 
+ * @param data  especifica el contenido de los datos
+ * @param topic  especifica el topico de MQTT donde se publicarán.
  */
 static void get_data( char* data,  char* topic);
 
-
 /**
- * @brief Función callback. Se llama cuando el dispositivo se conecto al servidor MQTT.
+ * @brief Esta función se ejecuta cuando la conexión MQTT se establece correctamente. Puede incluir lógica para subscribirse a topicos, publicar mensajes iniciales, o simplemente indicar que la conexión es exitosa.
  * 
  */
 static void mqtt_connected();
 
 /**
- * @brief Función callback. Se llama cuando el dispositivo se conecta a la red WiFi
- * y esta listo para conectarse a internet.
+ * @brief Esta función es un callback que se ejecuta cuando la conexión WiFi se establece exitosamente. Es posible que inicie la conexión MQTT o ejecute otras acciones necesarias una vez que el dispositivo esté conectado a la red.
  * 
  */
 static void callback_wifi_connected();
 
 
-
-
 /**
- * @brief Funcion que dictamina que la tarjeta RFID leída es de un USUARIO AUTORIZADO.
+ * @brief Esta función se llama cuando una acción se completa con éxito. Puede ser usada para indicar visualmente (por ejemplo, con un LED) o registrar en logs que la acción fue exitosa.
  * 
  */
 static void action_ok();
 
 /**
- * @brief Funcion que dictamina que la tarjeta RFID leída es de un USUARIO NO AUTORIZADO.
+ * @brief Similar a action_ok(), pero se llama cuando una acción falla. Probablemente indique un error, ya sea mediante un LED, un mensaje en el log, o una publicación MQTT.
+
  * 
  */
 static void action_fail();
 
-
 /**
- * @brief Función que se llama cuando el servidor No pudo procesar la 
- * tarjeta RFID enviada.
+ * @brief Esta función se llama cuando la acción realizada no se puede categorizar como éxito o fallo. Podría usarse para manejar estados indeterminados o errores no previstos.
  * 
  */
 static void action_unknown();

@@ -103,6 +103,7 @@ $(function(){ initResizable(false); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a9b6b07ff51f05aa2c5f938e38b67122e" id="r_a9b6b07ff51f05aa2c5f938e38b67122e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b6b07ff51f05aa2c5f938e38b67122e">get_data</a> (char *data, char *topic)</td></tr>
+<tr class="memdesc:a9b6b07ff51f05aa2c5f938e38b67122e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Esta función se encarga de obtener los datos desde el lector de tarjetas RFID y publicarlos en un tema específico de MQTT.  <br /></td></tr>
 <tr class="separator:a9b6b07ff51f05aa2c5f938e38b67122e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3df9c04ce54c54835fbf030d784abb04" id="r_a3df9c04ce54c54835fbf030d784abb04"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3df9c04ce54c54835fbf030d784abb04">app_main</a> ()</td></tr>
 <tr class="separator:a3df9c04ce54c54835fbf030d784abb04"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,10 +149,12 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Función callback. Se llama cuando el dispositivo recibe mensajes desde algún tópico al que este suscrito. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Esta función se encarga de obtener los datos desde el lector de tarjetas RFID y publicarlos en un tema específico de MQTT. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>String con el mensaje enviado. </td></tr>
-    <tr><td class="paramname">topic</td><td>Canal al que se envió el mensaje. </td></tr>
+    <tr><td class="paramname">data</td><td>especifica el contenido de los datos </td></tr>
+    <tr><td class="paramname">topic</td><td>especifica el topico de MQTT donde se publicarán. </td></tr>
   </table>
   </dd>
 </dl>

@@ -113,6 +113,10 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:a8fda45d4ea4896ba0f0f371f665d7471" id="r_a8fda45d4ea4896ba0f0f371f665d7471"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fda45d4ea4896ba0f0f371f665d7471">RC522_TX_ASK_REG</a>&#160;&#160;&#160;0x15</td></tr>
+<tr class="separator:a8fda45d4ea4896ba0f0f371f665d7471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a95f61d90546d63f38fb1b4354666e7" id="r_a8a95f61d90546d63f38fb1b4354666e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a95f61d90546d63f38fb1b4354666e7">ESP_ERR_RET_GUARD</a>(EXP)&#160;&#160;&#160;    if((err = (EXP)) != ESP_OK) { return err; }</td></tr>
+<tr class="separator:a8a95f61d90546d63f38fb1b4354666e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a105949c59c998e38aad80266afac92bf" id="r_a105949c59c998e38aad80266afac92bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a105949c59c998e38aad80266afac92bf">FREE</a>(ptr)&#160;&#160;&#160;    if(ptr) { free(ptr); ptr = NULL; }</td></tr>
 <tr class="memdesc:a105949c59c998e38aad80266afac92bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro for safely freeing memory. This macro checks if the pointer is not NULL before calling the free function. After freeing the memory, it sets the pointer to NULL to prevent dangling pointer issues. This helps in avoiding double free errors and improves the safety of memory management.  <br /></td></tr>
 <tr class="separator:a105949c59c998e38aad80266afac92bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,26 +126,43 @@ Functions</h2></td></tr>
 <tr class="memitem:afb38c236908dd9156f6ea3bb28168743" id="r_afb38c236908dd9156f6ea3bb28168743"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb38c236908dd9156f6ea3bb28168743">ESP_EVENT_DEFINE_BASE</a> (RC522_EVENTS)</td></tr>
 <tr class="separator:afb38c236908dd9156f6ea3bb28168743"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f313f14f12f5b7d320be2de484708ec" id="r_a0f313f14f12f5b7d320be2de484708ec"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f313f14f12f5b7d320be2de484708ec">rc522_create</a> (<a class="el" href="structrc522__config__t.html">rc522_config_t</a> *<a class="el" href="main_8h.html#a6a462cb2701e12b872e934b17e51cb27">config</a>, <a class="el" href="rc522_8h.html#a8f27ba127519044d9d033889fd89c325">rc522_handle_t</a> *out_rc522)</td></tr>
-<tr class="memdesc:a0f313f14f12f5b7d320be2de484708ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create RC522 scanner handle. To start scanning tags call the rc522_start function.  <br /></td></tr>
+<tr class="memdesc:a0f313f14f12f5b7d320be2de484708ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea un manejador de escáner RC522. Para comenzar a escanear etiquetas, llame a la función rc522_start.  <br /></td></tr>
 <tr class="separator:a0f313f14f12f5b7d320be2de484708ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a606e772e26d968afe2554ee0a54c59b5" id="r_a606e772e26d968afe2554ee0a54c59b5"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a606e772e26d968afe2554ee0a54c59b5">rc522_register_events</a> (<a class="el" href="rc522_8h.html#a8f27ba127519044d9d033889fd89c325">rc522_handle_t</a> <a class="el" href="structrc522.html">rc522</a>, <a class="el" href="rc522_8h.html#acf359d27eaaaa6c052fb950573a53f31">rc522_event_t</a> event, esp_event_handler_t event_handler, void *event_handler_arg)</td></tr>
 <tr class="separator:a606e772e26d968afe2554ee0a54c59b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2682d9943e56bc8cb9a5e2c931e33f2b" id="r_a2682d9943e56bc8cb9a5e2c931e33f2b"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2682d9943e56bc8cb9a5e2c931e33f2b">rc522_unregister_events</a> (<a class="el" href="rc522_8h.html#a8f27ba127519044d9d033889fd89c325">rc522_handle_t</a> <a class="el" href="structrc522.html">rc522</a>, <a class="el" href="rc522_8h.html#acf359d27eaaaa6c052fb950573a53f31">rc522_event_t</a> event, esp_event_handler_t event_handler)</td></tr>
 <tr class="separator:a2682d9943e56bc8cb9a5e2c931e33f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a886b2b922c8bd390c38d643495ea1896" id="r_a886b2b922c8bd390c38d643495ea1896"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a886b2b922c8bd390c38d643495ea1896">rc522_start</a> (<a class="el" href="rc522_8h.html#a8f27ba127519044d9d033889fd89c325">rc522_handle_t</a> <a class="el" href="structrc522.html">rc522</a>)</td></tr>
-<tr class="memdesc:a886b2b922c8bd390c38d643495ea1896"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start to scan tags. If already started, ESP_OK will just be returned. Initialization function had to be called before this one.  <br /></td></tr>
+<tr class="memdesc:a886b2b922c8bd390c38d643495ea1896"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comienza a escanear etiquetas. Si ya está iniciado, ESP_OK simplemente se devolverá. La función de inicialización debe haber sido llamada antes que esta.  <br /></td></tr>
 <tr class="separator:a886b2b922c8bd390c38d643495ea1896"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00834c0e674d13b5787b0d43be6d2e43" id="r_a00834c0e674d13b5787b0d43be6d2e43"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00834c0e674d13b5787b0d43be6d2e43">rc522_pause</a> (<a class="el" href="rc522_8h.html#a8f27ba127519044d9d033889fd89c325">rc522_handle_t</a> <a class="el" href="structrc522.html">rc522</a>)</td></tr>
-<tr class="memdesc:a00834c0e674d13b5787b0d43be6d2e43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pause scan tags. If already paused, ESP_OK will just be returned.  <br /></td></tr>
+<tr class="memdesc:a00834c0e674d13b5787b0d43be6d2e43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pausa el escaneo de etiquetas. Si ya está pausado, ESP_OK simplemente se devolverá.  <br /></td></tr>
 <tr class="separator:a00834c0e674d13b5787b0d43be6d2e43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8547957990e60be6ce11066ce43da551" id="r_a8547957990e60be6ce11066ce43da551"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8547957990e60be6ce11066ce43da551">rc522_destroy</a> (<a class="el" href="rc522_8h.html#a8f27ba127519044d9d033889fd89c325">rc522_handle_t</a> <a class="el" href="structrc522.html">rc522</a>)</td></tr>
-<tr class="memdesc:a8547957990e60be6ce11066ce43da551"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy RC522 and free all resources. Cannot be called from event handler.  <br /></td></tr>
+<tr class="memdesc:a8547957990e60be6ce11066ce43da551"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruye RC522 y libera todos los recursos. No se puede llamar desde el manejador de eventos.  <br /></td></tr>
 <tr class="separator:a8547957990e60be6ce11066ce43da551"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87270f3e17ebd103c65f1a257bc102aa" id="r_a87270f3e17ebd103c65f1a257bc102aa"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87270f3e17ebd103c65f1a257bc102aa">rc522_init</a> (<a class="el" href="structrc522__config__t.html">rc522_config_t</a> *<a class="el" href="main_8h.html#a6a462cb2701e12b872e934b17e51cb27">config</a>, <a class="el" href="base_8h.html#a3eed2300a3bbc19b767597cc3cb926ce">callback_RFID_t</a> get_rfid)</td></tr>
-<tr class="memdesc:a87270f3e17ebd103c65f1a257bc102aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuración rápida del modulo , usa callback cuando recibe RFID (uint64_t )para ocultar implementación.  <br /></td></tr>
+<tr class="memdesc:a87270f3e17ebd103c65f1a257bc102aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa el módulo RC522 con una configuración rápida, usando un callback cuando se recibe un RFID (uint64_t) para ocultar la implementación.  <br /></td></tr>
 <tr class="separator:a87270f3e17ebd103c65f1a257bc102aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a8a95f61d90546d63f38fb1b4354666e7" name="a8a95f61d90546d63f38fb1b4354666e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a95f61d90546d63f38fb1b4354666e7">&#9670;&#160;</a></span>ESP_ERR_RET_GUARD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ESP_ERR_RET_GUARD</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>EXP</em></span></td><td>)</td>
+          <td>&#160;&#160;&#160;    if((err = (EXP)) != ESP_OK) { return err; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a105949c59c998e38aad80266afac92bf" name="a105949c59c998e38aad80266afac92bf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a105949c59c998e38aad80266afac92bf">&#9670;&#160;</a></span>FREE</h2>
 
@@ -164,6 +185,20 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a8fda45d4ea4896ba0f0f371f665d7471" name="a8fda45d4ea4896ba0f0f371f665d7471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fda45d4ea4896ba0f0f371f665d7471">&#9670;&#160;</a></span>RC522_TX_ASK_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RC522_TX_ASK_REG&#160;&#160;&#160;0x15</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -204,15 +239,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Create RC522 scanner handle. To start scanning tags call the rc522_start function. </p>
+<p>Crea un manejador de escáner RC522. Para comenzar a escanear etiquetas, llame a la función rc522_start. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">config</td><td>Configuration </td></tr>
-    <tr><td class="paramname">out_rc522</td><td>Pointer to resulting new handle </td></tr>
+    <tr><td class="paramname">config</td><td>Configuración </td></tr>
+    <tr><td class="paramname">out_rc522</td><td>Puntero al nuevo manejador resultante </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK en caso de éxito </dd></dl>
 
 </div>
 </div>
@@ -231,10 +266,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Destroy RC522 and free all resources. Cannot be called from event handler. </p>
+<p>Destruye RC522 y libera todos los recursos. No se puede llamar desde el manejador de eventos. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="structrc522.html">rc522</a></td><td>Handle </td></tr>
+    <tr><td class="paramname"><a class="el" href="structrc522.html">rc522</a></td><td>Manejador </td></tr>
   </table>
   </dd>
 </dl>
@@ -260,11 +295,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Configuración rápida del modulo , usa callback cuando recibe RFID (uint64_t )para ocultar implementación. </p>
+<p>Inicializa el módulo RC522 con una configuración rápida, usando un callback cuando se recibe un RFID (uint64_t) para ocultar la implementación. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">config</td><td>Puntero a la configuración del modulo. </td></tr>
-    <tr><td class="paramname">get_rfid</td><td>Función callback que recibe como parámetro el RFID (uint64_t). </td></tr>
+    <tr><td class="paramname">config</td><td>Puntero a la configuración del módulo. </td></tr>
+    <tr><td class="paramname">get_rfid</td><td>Función de callback que recibe como parámetro el RFID (uint64_t). </td></tr>
   </table>
   </dd>
 </dl>
@@ -287,14 +322,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Pause scan tags. If already paused, ESP_OK will just be returned. </p>
+<p>Pausa el escaneo de etiquetas. Si ya está pausado, ESP_OK simplemente se devolverá. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="structrc522.html">rc522</a></td><td>Handle </td></tr>
+    <tr><td class="paramname"><a class="el" href="structrc522.html">rc522</a></td><td>Manejador </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK en caso de éxito </dd></dl>
 
 </div>
 </div>
@@ -344,14 +379,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Start to scan tags. If already started, ESP_OK will just be returned. Initialization function had to be called before this one. </p>
+<p>Comienza a escanear etiquetas. Si ya está iniciado, ESP_OK simplemente se devolverá. La función de inicialización debe haber sido llamada antes que esta. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="structrc522.html">rc522</a></td><td>Handle </td></tr>
+    <tr><td class="paramname"><a class="el" href="structrc522.html">rc522</a></td><td>Manejador </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK en caso de éxito </dd></dl>
 
 </div>
 </div>

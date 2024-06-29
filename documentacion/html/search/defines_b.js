@@ -27,7 +27,7 @@ var searchData=
   ['rc522_5ftimer_5fprescaler_5freg_24',['RC522_TIMER_PRESCALER_REG',['../rc522__registers_8h.html#afd31b24c745fcd142e40131dd2219c99',1,'rc522_registers.h']]],
   ['rc522_5ftimer_5freload_5flsb_5freg_25',['RC522_TIMER_RELOAD_LSB_REG',['../rc522__registers_8h.html#a77375663a41c4c3aee92a84eeef8978f',1,'rc522_registers.h']]],
   ['rc522_5ftimer_5freload_5fmsb_5freg_26',['RC522_TIMER_RELOAD_MSB_REG',['../rc522__registers_8h.html#a679ef91ee329528b7636432ac560687d',1,'rc522_registers.h']]],
-  ['rc522_5ftx_5fask_5freg_27',['RC522_TX_ASK_REG',['../rc522__registers_8h.html#a8fda45d4ea4896ba0f0f371f665d7471',1,'rc522_registers.h']]],
+  ['rc522_5ftx_5fask_5freg_27',['RC522_TX_ASK_REG',['../rc522__registers_8h.html#a8fda45d4ea4896ba0f0f371f665d7471',1,'RC522_TX_ASK_REG:&#160;rc522_registers.h'],['../rc522_8c.html#a8fda45d4ea4896ba0f0f371f665d7471',1,'RC522_TX_ASK_REG:&#160;rc522.c']]],
   ['rc522_5ftx_5fcontrol_5freg_28',['RC522_TX_CONTROL_REG',['../rc522__registers_8h.html#a150eaecab04fe2a1ea692483806cbc58',1,'rc522_registers.h']]],
   ['rc522_5fversion_5freg_29',['RC522_VERSION_REG',['../rc522__registers_8h.html#a8a9c5a8d876aba1020d14da00a49c43c',1,'rc522_registers.h']]],
   ['rconn_5ftry_5fmax_30',['RCONN_TRY_MAX',['../wifi_8c.html#a9649e50454efdf96b4cd4c532d383c15',1,'wifi.c']]],

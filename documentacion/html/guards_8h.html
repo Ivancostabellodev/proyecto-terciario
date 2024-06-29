@@ -95,6 +95,9 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">guards.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>libreria para manejar errores del esp32  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;esp_err.h&gt;</code><br />
 </div>
 <p><a href="guards_8h_source.html">Go to the source code of this file.</a></p>
@@ -102,37 +105,39 @@ $(function(){ initResizable(false); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:ad3f3b6fa26367b5f8a7dfd5e8a0da3f3" id="r_ad3f3b6fa26367b5f8a7dfd5e8a0da3f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3f3b6fa26367b5f8a7dfd5e8a0da3f3">SUCCESS_GUARD_GATE</a>&#160;&#160;&#160;__success_guard_gate</td></tr>
-<tr class="memdesc:ad3f3b6fa26367b5f8a7dfd5e8a0da3f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Label for success guard gate in macros. Used as a goto label to handle successful execution paths in macros.  <br /></td></tr>
+<tr class="memdesc:ad3f3b6fa26367b5f8a7dfd5e8a0da3f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Etiqueta para la puerta de guardia de éxito en macros. Usada como una etiqueta de salto para manejar rutas de ejecución exitosas en macros.  <br /></td></tr>
 <tr class="separator:ad3f3b6fa26367b5f8a7dfd5e8a0da3f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a241b638efc25ed6bce78039d024b0221" id="r_a241b638efc25ed6bce78039d024b0221"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a241b638efc25ed6bce78039d024b0221">ERROR_GUARD_GATE</a>&#160;&#160;&#160;__error_guard_gate</td></tr>
-<tr class="memdesc:a241b638efc25ed6bce78039d024b0221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Label for error guard gate in macros. Used as a goto label to handle error paths in macros.  <br /></td></tr>
+<tr class="memdesc:a241b638efc25ed6bce78039d024b0221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Etiqueta para la puerta de guardia de error en macros. Usada como una etiqueta de salto para manejar rutas de error en macros.  <br /></td></tr>
 <tr class="separator:a241b638efc25ed6bce78039d024b0221"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a772d09dfbc45a190006d03346b7a61e2" id="r_a772d09dfbc45a190006d03346b7a61e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a772d09dfbc45a190006d03346b7a61e2">EXIT_GUARD_GATE</a>&#160;&#160;&#160;__exit_guard_gate</td></tr>
-<tr class="memdesc:a772d09dfbc45a190006d03346b7a61e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Label for exit guard gate in macros. Used as a goto label to mark the end of execution paths in macros.  <br /></td></tr>
+<tr class="memdesc:a772d09dfbc45a190006d03346b7a61e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Etiqueta para la puerta de guardia de salida en macros. Usada como una etiqueta de salto para marcar el final de las rutas de ejecución en macros.  <br /></td></tr>
 <tr class="separator:a772d09dfbc45a190006d03346b7a61e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7162a3a9cd4772dfdfab299eba72bd60" id="r_a7162a3a9cd4772dfdfab299eba72bd60"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7162a3a9cd4772dfdfab299eba72bd60">JMP_GUARD_GATES</a>(on_error,  on_success)</td></tr>
-<tr class="memdesc:a7162a3a9cd4772dfdfab299eba72bd60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to create jump points for success and error handling. This macro defines labels for success and error handling, and a common exit point.  <br /></td></tr>
+<tr class="memdesc:a7162a3a9cd4772dfdfab299eba72bd60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro para crear puntos de salto para el manejo de éxito y error. Esta macro define etiquetas para el manejo de éxito y error, y un punto de salida común.  <br /></td></tr>
 <tr class="separator:a7162a3a9cd4772dfdfab299eba72bd60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a154824d9ae228b5cae3b5df153754dd3" id="r_a154824d9ae228b5cae3b5df153754dd3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a154824d9ae228b5cae3b5df153754dd3">ESP_ERR_JMP_GUARD</a>(EXP)&#160;&#160;&#160;    if((err = (EXP)) != ESP_OK) { goto <a class="el" href="#a241b638efc25ed6bce78039d024b0221">ERROR_GUARD_GATE</a>; }</td></tr>
-<tr class="memdesc:a154824d9ae228b5cae3b5df153754dd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro guard for jumping to an error handler on ESP error. Checks the result of EXP and if it's not ESP_OK, jumps to ERROR_GUARD_GATE.  <br /></td></tr>
+<tr class="memdesc:a154824d9ae228b5cae3b5df153754dd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro de guardia para saltar a un manejador de errores en caso de error de ESP. Verifica el resultado de EXP y si no es ESP_OK, salta a ERROR_GUARD_GATE.  <br /></td></tr>
 <tr class="separator:a154824d9ae228b5cae3b5df153754dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a8f4883ac5e0ecbf23fe35fadc86c5a" id="r_a2a8f4883ac5e0ecbf23fe35fadc86c5a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a8f4883ac5e0ecbf23fe35fadc86c5a">ESP_ERR_LOG_AND_JMP_GUARD</a>(EXP,  message)&#160;&#160;&#160;    if((err = (EXP)) != ESP_OK) { ESP_LOGE(TAG, message); goto <a class="el" href="#a241b638efc25ed6bce78039d024b0221">ERROR_GUARD_GATE</a>; }</td></tr>
-<tr class="memdesc:a2a8f4883ac5e0ecbf23fe35fadc86c5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro for logging an error message and jumping to an error handler on ESP error. If EXP is not ESP_OK, logs the provided message and jumps to ERROR_GUARD_GATE.  <br /></td></tr>
+<tr class="memdesc:a2a8f4883ac5e0ecbf23fe35fadc86c5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro para registrar un mensaje de error y saltar a un manejador de errores en caso de error de ESP. Si EXP no es ESP_OK, registra el mensaje proporcionado y salta a ERROR_GUARD_GATE.  <br /></td></tr>
 <tr class="separator:a2a8f4883ac5e0ecbf23fe35fadc86c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb4417347cf5945e0940947cfb57b4ef" id="r_afb4417347cf5945e0940947cfb57b4ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb4417347cf5945e0940947cfb57b4ef">CONDITION_LOG_AND_JMP_GUARD</a>(EXP,  message)&#160;&#160;&#160;    if(EXP) { ESP_LOGE(TAG, message); goto <a class="el" href="#a241b638efc25ed6bce78039d024b0221">ERROR_GUARD_GATE</a>; }</td></tr>
-<tr class="memdesc:afb4417347cf5945e0940947cfb57b4ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro for conditionally logging an error message and jumping to an error handler. If EXP evaluates to true, logs the provided message and jumps to ERROR_GUARD_GATE.  <br /></td></tr>
+<tr class="memdesc:afb4417347cf5945e0940947cfb57b4ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro para registrar condicionalmente un mensaje de error y saltar a un manejador de errores. Si EXP evalúa como verdadero, registra el mensaje proporcionado y salta a ERROR_GUARD_GATE.  <br /></td></tr>
 <tr class="separator:afb4417347cf5945e0940947cfb57b4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2eec2ec6bd55580961dc08e4af4754df" id="r_a2eec2ec6bd55580961dc08e4af4754df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2eec2ec6bd55580961dc08e4af4754df">ALLOC_JMP_GUARD</a>(EXP)&#160;&#160;&#160;    if((EXP) == NULL) { err = ESP_ERR_NO_MEM; goto <a class="el" href="#a241b638efc25ed6bce78039d024b0221">ERROR_GUARD_GATE</a>; }</td></tr>
-<tr class="memdesc:a2eec2ec6bd55580961dc08e4af4754df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro guard for memory allocation with jump to error handling. This macro checks if a memory allocation expression (EXP) fails (i.e., returns NULL). If the allocation fails, it jumps to the ERROR_GUARD_GATE label. This is typically used in functions where error handling is centralized at a specific label (ERROR_GUARD_GATE) for cleaner and more manageable code. It helps in avoiding deep nesting of error checks after each allocation.  <br /></td></tr>
+<tr class="memdesc:a2eec2ec6bd55580961dc08e4af4754df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro de guardia para la asignación de memoria con salto al manejo de errores. Esta macro verifica si una expresión de asignación de memoria (EXP) falla (es decir, devuelve NULL). Si la asignación falla, salta a la etiqueta ERROR_GUARD_GATE. Esto se usa típicamente en funciones donde el manejo de errores está centralizado en una etiqueta específica (ERROR_GUARD_GATE) para un código más limpio y manejable. Ayuda a evitar la anidación profunda de verificaciones de errores después de cada asignación.  <br /></td></tr>
 <tr class="separator:a2eec2ec6bd55580961dc08e4af4754df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35b4bd9c98118f503a721b952e447361" id="r_a35b4bd9c98118f503a721b952e447361"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35b4bd9c98118f503a721b952e447361">ALLOC_RET_GUARD</a>(EXP)&#160;&#160;&#160;    if((EXP) == NULL) { return ESP_ERR_NO_MEM; }</td></tr>
-<tr class="memdesc:a35b4bd9c98118f503a721b952e447361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro guard for memory allocation functions. This macro ensures that if a memory allocation expression fails (returns NULL), the function in which this macro is used will immediately return with ESP_ERR_NO_MEM. It's useful for handling memory allocation failures gracefully in functions.  <br /></td></tr>
+<tr class="memdesc:a35b4bd9c98118f503a721b952e447361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro de guardia para funciones de asignación de memoria. Esta macro asegura que si una expresión de asignación de memoria falla (devuelve NULL), la función en la que se usa esta macro retornará inmediatamente con ESP_ERR_NO_MEM. Es útil para manejar fallas de asignación de memoria de manera elegante en funciones.  <br /></td></tr>
 <tr class="separator:a35b4bd9c98118f503a721b952e447361"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a95f61d90546d63f38fb1b4354666e7" id="r_a8a95f61d90546d63f38fb1b4354666e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a95f61d90546d63f38fb1b4354666e7">ESP_ERR_RET_GUARD</a>(EXP)&#160;&#160;&#160;    if((err = (EXP)) != ESP_OK) { return err; }</td></tr>
-<tr class="memdesc:a8a95f61d90546d63f38fb1b4354666e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro guard for ESP error handling. This macro checks if the result of EXP is not ESP_OK and, if so, returns the error code.  <br /></td></tr>
+<tr class="memdesc:a8a95f61d90546d63f38fb1b4354666e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro de guardia para el manejo de errores de ESP. Esta macro verifica si el resultado de EXP no es ESP_OK y, de ser así, retorna el código de error.  <br /></td></tr>
 <tr class="separator:a8a95f61d90546d63f38fb1b4354666e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>libreria para manejar errores del esp32 </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a2eec2ec6bd55580961dc08e4af4754df" name="a2eec2ec6bd55580961dc08e4af4754df"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2eec2ec6bd55580961dc08e4af4754df">&#9670;&#160;</a></span>ALLOC_JMP_GUARD</h2>
 
@@ -148,10 +153,10 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro guard for memory allocation with jump to error handling. This macro checks if a memory allocation expression (EXP) fails (i.e., returns NULL). If the allocation fails, it jumps to the ERROR_GUARD_GATE label. This is typically used in functions where error handling is centralized at a specific label (ERROR_GUARD_GATE) for cleaner and more manageable code. It helps in avoiding deep nesting of error checks after each allocation. </p>
+<p>Macro de guardia para la asignación de memoria con salto al manejo de errores. Esta macro verifica si una expresión de asignación de memoria (EXP) falla (es decir, devuelve NULL). Si la asignación falla, salta a la etiqueta ERROR_GUARD_GATE. Esto se usa típicamente en funciones donde el manejo de errores está centralizado en una etiqueta específica (ERROR_GUARD_GATE) para un código más limpio y manejable. Ayuda a evitar la anidación profunda de verificaciones de errores después de cada asignación. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">EXP</td><td>Memory allocation expression (e.g., a call to malloc). </td></tr>
+    <tr><td class="paramname">EXP</td><td>Expresión de asignación de memoria (por ejemplo, una llamada a malloc). </td></tr>
   </table>
   </dd>
 </dl>
@@ -173,14 +178,14 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro guard for memory allocation functions. This macro ensures that if a memory allocation expression fails (returns NULL), the function in which this macro is used will immediately return with ESP_ERR_NO_MEM. It's useful for handling memory allocation failures gracefully in functions. </p>
+<p>Macro de guardia para funciones de asignación de memoria. Esta macro asegura que si una expresión de asignación de memoria falla (devuelve NULL), la función en la que se usa esta macro retornará inmediatamente con ESP_ERR_NO_MEM. Es útil para manejar fallas de asignación de memoria de manera elegante en funciones. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">EXP</td><td>Memory allocation expression (e.g., a call to malloc). </td></tr>
+    <tr><td class="paramname">EXP</td><td>Expresión de asignación de memoria (por ejemplo, una llamada a malloc). </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Exits the caller function with ESP_ERR_NO_MEM if EXP evaluates to NULL. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Sale de la función que lo llama con ESP_ERR_NO_MEM si EXP evalúa a NULL. </dd></dl>
 
 </div>
 </div>
@@ -203,11 +208,11 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro for conditionally logging an error message and jumping to an error handler. If EXP evaluates to true, logs the provided message and jumps to ERROR_GUARD_GATE. </p>
+<p>Macro para registrar condicionalmente un mensaje de error y saltar a un manejador de errores. Si EXP evalúa como verdadero, registra el mensaje proporcionado y salta a ERROR_GUARD_GATE. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">EXP</td><td>Boolean expression to evaluate. </td></tr>
-    <tr><td class="paramname">message</td><td>The message to log if EXP is true. </td></tr>
+    <tr><td class="paramname">EXP</td><td>Expresión booleana a evaluar. </td></tr>
+    <tr><td class="paramname">message</td><td>El mensaje a registrar si EXP es verdadero. </td></tr>
   </table>
   </dd>
 </dl>
@@ -226,7 +231,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Label for error guard gate in macros. Used as a goto label to handle error paths in macros. </p>
+<p>Etiqueta para la puerta de guardia de error en macros. Usada como una etiqueta de salto para manejar rutas de error en macros. </p>
 
 </div>
 </div>
@@ -245,10 +250,10 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro guard for jumping to an error handler on ESP error. Checks the result of EXP and if it's not ESP_OK, jumps to ERROR_GUARD_GATE. </p>
+<p>Macro de guardia para saltar a un manejador de errores en caso de error de ESP. Verifica el resultado de EXP y si no es ESP_OK, salta a ERROR_GUARD_GATE. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">EXP</td><td>Expression that returns an esp_err_t value. </td></tr>
+    <tr><td class="paramname">EXP</td><td>Expresión que devuelve un valor esp_err_t. </td></tr>
   </table>
   </dd>
 </dl>
@@ -274,11 +279,11 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro for logging an error message and jumping to an error handler on ESP error. If EXP is not ESP_OK, logs the provided message and jumps to ERROR_GUARD_GATE. </p>
+<p>Macro para registrar un mensaje de error y saltar a un manejador de errores en caso de error de ESP. Si EXP no es ESP_OK, registra el mensaje proporcionado y salta a ERROR_GUARD_GATE. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">EXP</td><td>Expression that returns an esp_err_t value. </td></tr>
-    <tr><td class="paramname">message</td><td>The message to log on error. </td></tr>
+    <tr><td class="paramname">EXP</td><td>Expresión que devuelve un valor esp_err_t. </td></tr>
+    <tr><td class="paramname">message</td><td>El mensaje a registrar en caso de error. </td></tr>
   </table>
   </dd>
 </dl>
@@ -300,14 +305,14 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Macro guard for ESP error handling. This macro checks if the result of EXP is not ESP_OK and, if so, returns the error code. </p>
+<p>Macro de guardia para el manejo de errores de ESP. Esta macro verifica si el resultado de EXP no es ESP_OK y, de ser así, retorna el código de error. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">EXP</td><td>Expression that returns an esp_err_t value. </td></tr>
+    <tr><td class="paramname">EXP</td><td>Expresión que devuelve un valor esp_err_t. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns the error code if EXP is not ESP_OK. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna el código de error si EXP no es ESP_OK. </dd></dl>
 
 </div>
 </div>
@@ -323,7 +328,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Label for exit guard gate in macros. Used as a goto label to mark the end of execution paths in macros. </p>
+<p>Etiqueta para la puerta de guardia de salida en macros. Usada como una etiqueta de salto para marcar el final de las rutas de ejecución en macros. </p>
 
 </div>
 </div>
@@ -349,15 +354,15 @@ Macros</h2></td></tr>
 <div class="line">        <a class="code hl_define" href="#a241b638efc25ed6bce78039d024b0221">ERROR_GUARD_GATE</a>: { on_error; <span class="keywordflow">goto</span> <a class="code hl_define" href="#a772d09dfbc45a190006d03346b7a61e2">EXIT_GUARD_GATE</a>; };  \</div>
 <div class="line">        <a class="code hl_define" href="#ad3f3b6fa26367b5f8a7dfd5e8a0da3f3">SUCCESS_GUARD_GATE</a>: { on_success; <span class="keywordflow">goto</span> <a class="code hl_define" href="#a772d09dfbc45a190006d03346b7a61e2">EXIT_GUARD_GATE</a>; };  \</div>
 <div class="line">        <a class="code hl_define" href="#a772d09dfbc45a190006d03346b7a61e2">EXIT_GUARD_GATE</a>: {};</div>
-<div class="ttc" id="aguards_8h_html_a241b638efc25ed6bce78039d024b0221"><div class="ttname"><a href="#a241b638efc25ed6bce78039d024b0221">ERROR_GUARD_GATE</a></div><div class="ttdeci">#define ERROR_GUARD_GATE</div><div class="ttdoc">Label for error guard gate in macros. Used as a goto label to handle error paths in macros.</div><div class="ttdef"><b>Definition</b> guards.h:15</div></div>
-<div class="ttc" id="aguards_8h_html_a772d09dfbc45a190006d03346b7a61e2"><div class="ttname"><a href="#a772d09dfbc45a190006d03346b7a61e2">EXIT_GUARD_GATE</a></div><div class="ttdeci">#define EXIT_GUARD_GATE</div><div class="ttdoc">Label for exit guard gate in macros. Used as a goto label to mark the end of execution paths in macro...</div><div class="ttdef"><b>Definition</b> guards.h:21</div></div>
-<div class="ttc" id="aguards_8h_html_ad3f3b6fa26367b5f8a7dfd5e8a0da3f3"><div class="ttname"><a href="#ad3f3b6fa26367b5f8a7dfd5e8a0da3f3">SUCCESS_GUARD_GATE</a></div><div class="ttdeci">#define SUCCESS_GUARD_GATE</div><div class="ttdoc">Label for success guard gate in macros. Used as a goto label to handle successful execution paths in ...</div><div class="ttdef"><b>Definition</b> guards.h:9</div></div>
+<div class="ttc" id="aguards_8h_html_a241b638efc25ed6bce78039d024b0221"><div class="ttname"><a href="#a241b638efc25ed6bce78039d024b0221">ERROR_GUARD_GATE</a></div><div class="ttdeci">#define ERROR_GUARD_GATE</div><div class="ttdoc">Etiqueta para la puerta de guardia de error en macros. Usada como una etiqueta de salto para manejar ...</div><div class="ttdef"><b>Definition</b> guards.h:18</div></div>
+<div class="ttc" id="aguards_8h_html_a772d09dfbc45a190006d03346b7a61e2"><div class="ttname"><a href="#a772d09dfbc45a190006d03346b7a61e2">EXIT_GUARD_GATE</a></div><div class="ttdeci">#define EXIT_GUARD_GATE</div><div class="ttdoc">Etiqueta para la puerta de guardia de salida en macros. Usada como una etiqueta de salto para marcar ...</div><div class="ttdef"><b>Definition</b> guards.h:24</div></div>
+<div class="ttc" id="aguards_8h_html_ad3f3b6fa26367b5f8a7dfd5e8a0da3f3"><div class="ttname"><a href="#ad3f3b6fa26367b5f8a7dfd5e8a0da3f3">SUCCESS_GUARD_GATE</a></div><div class="ttdeci">#define SUCCESS_GUARD_GATE</div><div class="ttdoc">Etiqueta para la puerta de guardia de éxito en macros. Usada como una etiqueta de salto para manejar ...</div><div class="ttdef"><b>Definition</b> guards.h:12</div></div>
 </div><!-- fragment -->
-<p>Macro to create jump points for success and error handling. This macro defines labels for success and error handling, and a common exit point. </p>
+<p>Macro para crear puntos de salto para el manejo de éxito y error. Esta macro define etiquetas para el manejo de éxito y error, y un punto de salida común. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">on_error</td><td>Code to execute on error. </td></tr>
-    <tr><td class="paramname">on_success</td><td>Code to execute on success. </td></tr>
+    <tr><td class="paramname">on_error</td><td>Código a ejecutar en caso de error. </td></tr>
+    <tr><td class="paramname">on_success</td><td>Código a ejecutar en caso de éxito. </td></tr>
   </table>
   </dd>
 </dl>
@@ -376,7 +381,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Label for success guard gate in macros. Used as a goto label to handle successful execution paths in macros. </p>
+<p>Etiqueta para la puerta de guardia de éxito en macros. Usada como una etiqueta de salto para manejar rutas de ejecución exitosas en macros. </p>
 
 </div>
 </div>

@@ -1,3 +1,8 @@
+/**
+ * @file config.h
+ * @brief libreria para configurar topicos y el mqtt a los que se suscribe/publica el esp
+ * 
+ */
 #ifndef _CONFIG_H
 #define _CONFIG_H
 #include "base.h"

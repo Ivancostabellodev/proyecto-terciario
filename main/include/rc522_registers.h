@@ -1,72 +1,72 @@
 #pragma once
 
-// Starts and stops command execution
+// Inicia y detiene la ejecución de comandos
 #define RC522_COMMAND_REG 0x01
 
-// Communication Interrupt Enable Register.
-// Control bits to enable and disable the passing of interrupt requests
+// Registro de habilitación de interrupción de comunicación.
+// Bits de control para habilitar y deshabilitar el paso de solicitudes de interrupción
 #define RC522_COMM_INT_EN_REG 0x02
 
-// Diverted Interrupt Enable Register.
-// Control bits to enable and disable the passing of interrupt requests
+// Registro de habilitación de interrupción desviada.
+// Bits de control para habilitar y deshabilitar el paso de solicitudes de interrupción
 #define RC522_DIV_INT_EN_REG 0x03
 
-// Communication Interrupt request bits
+// Bits de solicitud de interrupción de comunicación
 #define RC522_COMM_INT_REQ_REG 0x04
 
-// Diverted Interrupt request bits
+// Bits de solicitud de interrupción desviada
 #define RC522_DIV_INT_REQ_REG 0x05
 
-// Error bits showing the error status of the last command  executed
+// Bits de error que muestran el estado de error del último comando ejecutado
 #define RC522_ERROR_REG 0x06
 
-// Contains status bits of the receiver, transmitter and data mode detector
+// Contiene bits de estado del receptor, transmisor y detector de modo de datos
 #define RC522_STATUS_2_REG 0x08
 
-// Shows the MFRC522 software version
+// Muestra la versión del software MFRC522
 #define RC522_VERSION_REG 0x37
 
-// Controls the logical behavior of the antenna driver pins TX1 and TX2
+// Controla el comportamiento lógico de los pines del driver de antena TX1 y TX2
 #define RC522_TX_CONTROL_REG 0x14
 
-// Configures the receiver gain
+// Configura la ganancia del receptor
 #define RC522_RF_CFG_REG 0x26
 
-// Input and output of 64 byte FIFO buffer
+// Entrada y salida del búfer FIFO de 64 bytes
 #define RC522_FIFO_DATA_REG 0x09
 
-// Number of bytes stored in the FIFO buffer
+// Número de bytes almacenados en el búfer FIFO
 #define RC522_FIFO_LEVEL_REG 0x0A
 
-// Miscellaneous control register
+// Registro de control misceláneo
 #define RC522_CONTROL_REG 0x0C
 
-// Adjustments for bit-oriented frames
+// Ajustes para tramas orientadas a bits
 #define RC522_BIT_FRAMING_REG 0x0D
 
-// MSB (higher bits) values of the CRC calculation
+// Valores MSB (bits superiores) de la calculadora CRC
 #define RC522_CRC_RESULT_MSB_REG 0x21
 
-// LSB (lower bits) values of the CRC calculation
+// Valores LSB (bits inferiores) de la calculadora CRC
 #define RC522_CRC_RESULT_LSB_REG 0x22
 
-// Sets the modulation width
+// Establece el ancho de modulación
 #define RC522_MOD_WIDTH_REG 0x24
 
-// Defines the mode of the timer
+// Define el modo del temporizador
 #define RC522_TIMER_MODE_REG 0x2A
 
-// Defines the timer prescaler settings
+// Define la configuración del preescalador del temporizador
 #define RC522_TIMER_PRESCALER_REG 0x2B
 
-// MSB (higher bits) value of 16-bit timer reload value
+// Valor MSB (bits superiores) del valor de recarga del temporizador de 16 bits
 #define RC522_TIMER_RELOAD_MSB_REG 0x2C
 
-// LSB (lower bits) value of 16-bit timer reload value
+// Valor LSB (bits inferiores) del valor de recarga del temporizador de 16 bits
 #define RC522_TIMER_RELOAD_LSB_REG 0x2D
 
-// Defines general modes for transmitting and receiving
+// Define modos generales para transmitir y recibir
 #define RC522_MODE_REG 0x11
 
-// Controls the setting of the transmission modulation
+// Controla la configuración de la modulación de transmisión
 #define RC522_TX_ASK_REG 0x15

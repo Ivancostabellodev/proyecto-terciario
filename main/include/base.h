@@ -1,6 +1,9 @@
 #ifndef _BASE_H
 #define _BASE_H
-
+/**
+ * @file base.h
+ * @brief  libreria de los callback que usa el lector rfid
+ */
 #include "esp_err.h"
 #include <stddef.h>
 #include <string.h>
@@ -9,7 +12,6 @@
 #include "esp_event.h"
 #include <esp_log.h>
 #include <inttypes.h>
-
 
 /**
  * @brief callback que recibe el codigo rfid 

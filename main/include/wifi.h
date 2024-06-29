@@ -1,3 +1,7 @@
+/**
+ * @file wifi.h
+ * @brief libreria de funciones que usa el wifi
+ */
 #ifndef _WIFI_H
 #define _WIFI_H
 #include  "base.h"
@@ -10,19 +14,19 @@
 
 
 /**
- * @brief Inicio conexión Wifi en STATION MODE por default.
+ * @brief Esta función se encarga de conectar el dispositivo a una red WiFi utilizando las credenciales proporcionadas
  * 
- * @param WIFI_ID Nombre de la red WiFi
- * @param PASS  Contraseña de la red
- * @param callback_conn Función callback se llama cuando el dispositivo se conecto a la red
- * @param callback_desconn  Función callback se llama cuando el dispositivo se desconecto de la red.
+ * @param WIFI_ID         red wifi
+ * @param PASS            contraseña de la red
+ * @param callback_conn    puntero a una función de tipo esp_callback_t que se llamará cuando la conexión WiFi se establezca correctamente.
+ * @param callback_desconn     puntero a una función de tipo esp_callback_t que se llamará cuando la conexión WiFi se desconecte.
  * @return esp_err_t 
  */
  esp_err_t wifi_connect(const char* WIFI_ID, const char * PASS,
                         esp_callback_t callback_conn, esp_callback_t callback_desconn);
 
 /**
- * @brief Libera los recursos asignados al WiFi.
+ * @brief Esta función se utiliza para desconectar el dispositivo de la red WiFi actual.
  * 
  * @return esp_err_t 
  */
