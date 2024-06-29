@@ -8,6 +8,30 @@ Este proyecto se divide en 3 partes:
 
 ### Documentacion [index](https://archivoindex.netlify.app)
 
+## Configuracion
+
+### Pines GPIO para la conexion entre el ESP y el lector RFID
+
+ Pines Lector RFID | GPIO(ESP32)
+------------- | -------------
+SDA_GPIO   |  22
+SCK_GPIO   |  19
+MOSI_GPIO  |  23
+MISO_GPIO  |  21
+
+### Pines GPIO para la conexion entre el ESP y el teclado matricial
+
+Pines Teclado Matricial  | GPIO(ESP32)
+-------------| -------------
+Columna_1  |  32
+Columna_2  |  33 
+Columna_3  |  25
+Columna_4  |  26
+Fila_1     |  27
+Fila_2     |  14
+Fila_3     |  12
+Fila_4     |  13
+
 ## Imagenes
 
 ### Diagrama del circuito hecho en wokwi:
@@ -47,31 +71,6 @@ https://github.com/Valen989/Proyecto-terciario/assets/168491945/0f934803-fe3b-40
 ### Funcionamiento del producto cuando se lee una password rechazada
 
 https://github.com/Valen989/Proyecto-terciario/assets/168491945/0d3bb047-016f-45b9-a058-f216081749bd
-
-## Configuracion
-
-### Pines GPIO para la conexion entre el ESP y el lector RFID
-
- Pines Lector RFID | GPIO(ESP32)
-------------- | -------------
-SDA_GPIO   |  22
-SCK_GPIO   |  19
-MOSI_GPIO  |  23
-MISO_GPIO  |  21
-
-### Pines GPIO para la conexion entre el ESP y el teclado matricial
-
-Pines Teclado Matricial  | GPIO(ESP32)
--------------| -------------
-Columna_1  |  32
-Columna_2  |  33 
-Columna_3  |  25
-Columna_4  |  26
-Fila_1     |  27
-Fila_2     |  14
-Fila_3     |  12
-Fila_4     |  13
-
 
 ### MQTT
 
